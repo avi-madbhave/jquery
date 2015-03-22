@@ -2,9 +2,303 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>jQuery Tutorial</title>
+    <link rel="stylesheet" href="/css/reveal.css"/>
+    <link rel="stylesheet" href="/css/theme/solarized.css" id="theme">
 </head>
 <body>
-<h1>jQuery Tutorial</h1>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            jQuery
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                Agenda
+            </div>
+            <div class="content">
+                <ul>
+                    <li>Understand me ( DOM )</li>
+                    <li>Setup me</li>
+                    <li>Use me</li>
+                    <li> Find me</li>
+                    <li>Animate me </li>
+                    <li>Rate me</li>
+                    <li>Plug me</li>
+                </ul>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <section>
+                <div class="title">
+                    Understand Me ( DOM )
+                </div>
+                <div class="content">
+                    ￼D is for document :-
+                    The Document Object Model can’t work without a document. When we create a web page and load it in a web browser, the DOM stirs into life.
+                    It takes the document that we have written and turns into an object.
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+            </section>
+            <section>
+                <div class="title">
+                    Understand Me ( DOM )
+                </div>
+                <div class="content">
+                    O is for object :-
+                    Simply objects are self-contained bundles of data. Variables associated with an object are called <b>properties</b> of the object.
+                    Function that can be executed by an object are called <b>methods</b> of the object.
+                    There are three kinds of objects in jQuery/javascript
+                    a. User-defined
+                    b. Native objects like Array, Math, and Date
+                    c. Host objects
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+            </section>
+            <section>
+                <div class="title">
+                    Understand Me ( DOM )
+                </div>
+                <div class="content">
+                    M is for Model :-
+                    <p>
+                        The M in DOM stands for Model, but it could just as easily stand for Map.
+                        A model, like a map, is representation of something.
+                        The Document Object Model represents the web page that’s currently loaded in the browser window.
+                        The browser provides a map (or model) of the page. We can use jQuery to read this map.
+                    </p>
+                    <p>
+                        Maps make use of conventions like direction, nodes, and scale.
+                        In order to read a map, we need to understand these conventions and it’s the same with the Document Object Model.
+                    </p>
+                    <p>
+                        The most important convention used by the Document Object Model is the representation of a document as a tree.
+                    </p>
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+            </section>
+
+        </section>
+        <section>
+            <div class="title">
+                DOM Structure
+            </div>
+            <div class="content">
+
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                Setup Me
+            </div>
+            <div class="content">
+                To start jQuery, we need a copy of the jQuery library which we get from the main download page.
+                url : <a href="http://jquery.com/download/">Downloading jQuery</a>
+                To add jQuery into our web page, we need to used &lt;script&gt; tag
+                <code>
+                    &lt;html&gt;
+                    &lt;head&gt;
+                    &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+                    &lt;script type="text/javascript"&gt;
+                    // we will add our javascript code here
+                    &lt;/script&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;!-- we will add our HTML content here --&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                Use Me
+            </div>
+            <div class="content">
+                <code>
+                    &lt;html&gt;
+                    &lt;head&gt;
+                    &lt;title&gt;Hello jQuery&lt;/title&gt;
+                    &lt;script type=“text/javascript” scr=“jquery.js”&gt;&lt;/script&gt;
+                    &lt;script type=“text/javascript”&gt;
+                    $(document).ready(func&gt;on() { $("a").click(func&gt;on() {
+                    alert("Hello jQuery!"); });
+                    });
+                    &lt;/script&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;a href=“#”&gt;Click me&lt;/a&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                Find Me
+            </div>
+            <div class="content">
+                jQuery provides two approaches to select elements. The first uses a combination of CSS and XPath
+                selectors passed as a string to the jQuery constructor (eg. $("div > ul a")). The second uses several
+                methods of the jQuery object. Both approaches can be combined.
+                CSS and XPath selectors
+                <code>
+                    $(‘.class’)
+                    $(‘#id’)
+                    $('tag')
+                </code>
+                Methods of the jQuery
+                <code>
+                    find() filter() prev()
+                    each() not() next()
+                    parent() parents("p") ..........
+                </code>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                Animate Me
+            </div>
+
+            <div class="content">
+                Simple animations with jQuery can be achieved with show() and hide().
+                You can create any combination of animations with animate(), eg. a slide with a fade:
+                <code>
+                    $(document).ready(function(){
+                        $("a").toggle(function(){
+                            $(".stuff").hide('slow');
+                        },function(){
+                            $(".stuff").show('fast');
+                        });
+                    });
+                </code>
+                <code>
+                    $(document).ready(function(){
+                    $("a").toggle(function(){
+                        $(".stuff").animate({ height: 'hide', opacity: 'hide' }, 'slow');
+                    },
+                    function(){
+                        $(".stuff").animate({ height: 'show', opacity: 'show' }, 'slow'); });
+                    });
+                </code>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                Rate Me
+            </div>
+
+            <div class="content">
+                In this part we write a small Ajax application, that allows the user to rate something,
+                ￼
+                <code>
+                    $(document).ready(function() {
+                        //generate markup
+                        $("#rating").append("Please rate: ");
+
+                        for ( var i = 1; i <= 5; i++ ) {￼
+                            $("#rating").append("&lt;a href='#'&gt;" + i + "&lt;/a&gt;");
+                        }
+
+                        // add markup to container and apply click handlers to anchors
+                        $("#rating a").click(function(e) {
+                            // stop normal link click
+                            e.preventDefault();
+                            // send request
+                            $.post("rate.php", {rating: $(this).html()}, function(xml) {
+                                // format and output result
+                                $("#rating").html("Thanks for rating, current average: " + $("average", xml).text() + ", number of votes: " + $("count", xml).text());
+                            });
+                        });
+                    });
+                </code>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                Plug Me
+            </div>
+
+            <div class="content">
+                Writing your own plugins for jQuery is quite easy. If you stick to the following rules,
+                <b>Plugin Naming</b>
+                Find a name for your plugin, lets call our example "foobar". Create a file named jquery.
+                [yourpluginname].js, eg. jquery.foobar.js
+                <b>Adding a Custom Method</b>
+                Create one or more plugin methods by extending the jQuery object, eg.:
+                <code>
+                    jQuery.fn.foobar = function() { // do something
+                    };
+                </code>
+
+                Which will then be accessible by performing:
+                <code>
+                    $(...).foobar();
+                </code>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            Thank you
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript" src="/javascript/head.min.js"></script>
+<script type="text/javascript" src="/javascript/reveal.js"></script>
+<script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        // rtl: true,
+
+//        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default' // default/cube/page/concave/zoom/linear/none
+
+        // transitionSpeed: 'slow',
+        // backgroundTransition: 'slide'
+    });
+
+</script>
 </body>
 </html>
