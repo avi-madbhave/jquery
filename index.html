@@ -111,19 +111,19 @@
                 To start jQuery, we need a copy of the jQuery library which we get from the main download page.
                 url : <a href="http://jquery.com/download/">Downloading jQuery</a>
                 <p>To add jQuery into our web page, we need to used &lt;script&gt; tag</p>
-                <pre>
-                    &lt;html&gt;
-                        &lt;head&gt;
-                            &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
-                            &lt;script type="text/javascript"&gt;
-                            // we will add our javascript code here
-                            &lt;/script&gt;
-                        &lt;/head&gt;
-                        &lt;body&gt;
-                            &lt;!-- we will add our HTML content here --&gt;
-                        &lt;/body&gt;
-                    &lt;/html&gt;
-                </pre>
+<pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+            // we will add our javascript code here
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- we will add our HTML content here --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
             </div>
             <div class="footer">
                 avi.madbhave@gmail.com
@@ -134,24 +134,25 @@
                 <span>Use me</span>
             </div>
             <div class="content">
-                <pre>
-                    &lt;html&gt;
-                        &lt;head&gt;
-                            &lt;title&gt;Hello jQuery&lt;/title&gt;
-                            &lt;script type=“text/javascript” scr=“jquery.js”&gt;&lt;/script&gt;
-                            &lt;script type=“text/javascript”&gt;
-                                $(document).ready(function() {
-                                    $("a").click(function() {
-                                        alert("Hello jQuery!");
-                                    });
-                                });
-                            &lt;/script&gt;
-                        &lt;/head&gt;
-                        &lt;body&gt;
-                            &lt;a href=“#”&gt;Click me&lt;/a&gt;
-                        &lt;/body&gt;
-                    &lt;/html&gt;
-                </pre>
+                A small Hello jQuery! application.
+<pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Hello jQuery&lt;/title&gt;
+        &lt;script type=“text/javascript” scr=“jquery.js”&gt;&lt;/script&gt;
+        &lt;script type=“text/javascript”&gt;
+            $(document).ready(function() {
+                $("a").click(function() {
+                    alert("Hello jQuery!");
+                });
+            });
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href=“#”&gt;Click me&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
             </div>
             <div class="footer">
                 avi.madbhave@gmail.com
@@ -164,16 +165,24 @@
                 </div>
                 <div class="content">
                     jQuery provides two approaches to select elements.
-                    <p>The first uses a combination of CSS and XPath selectors passed as a string to the jQuery constructor (eg. $("div > ul a")).</p>
-                    <pre>
-                        <table width="90%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td><strong>$(‘.class’)</strong></td>
-                                <td><strong>$(‘#id’)</strong></td>
-                                <td><strong>$('tag')</strong></td>
-                            </tr>
-                        </table>
-                    </pre>
+                    <p>The first uses a combination of <a href="https://api.jquery.com/category/selectors/" target="_blank">CSS and XPath selectors</a> passed as a string to the jQuery constructor (eg. $("div > ul a")):</p>
+<pre>
+<table width="90%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><strong>$(‘.class’)</strong></td>
+        <td><strong>$(‘#id’)</strong></td>
+        <td><strong>$('tag')</strong></td>
+    </tr>
+    <tr>
+        <td colspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+        <td><strong>$(‘E[@attr]’)</strong></td>
+        <td><strong>$(‘E[@attr=val]’)</strong></td>
+        <td><strong>$(‘E[@attr*=val]’)</strong></td>
+    </tr>
+</table>
+</pre>
                 </div>
                 <div class="footer">
                     avi.madbhave@gmail.com
@@ -184,27 +193,38 @@
                     <span>Find me</span>
                 </div>
                 <div class="content">
-                    The second uses several methods of the jQuery object.
-                    <pre>
-                        <table width="90%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td><strong>find()</strong></td>
-                                <td><strong>prev()</strong></td>
-                                <td><strong>each()</strong></td>
-                                <td><strong>not()</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>next()</strong></td>
-                                <td><strong>parent()</strong></td>
-                                <td><strong>parents("p")</strong></td>
-                                <td><strong>..........</strong></td>
-                            </tr>
-                        </table>
-                    </pre>
-                    Both approaches can be combined.
-                    <pre>
-
-                    </pre>
+                    The second uses several methods of the jQuery object:
+<pre>
+<table width="90%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><strong>find()</strong></td>
+        <td><strong>next()</strong></td>
+        <td><strong>nextAll()</strong></td>
+        <td><strong>prev()</strong></td>
+        <td><strong>prevAll()</strong></td>
+        <td><strong>siblings()</strong></td>
+    </tr>
+    <tr>
+        <td colspan="6">&nbsp;</td>
+    </tr>
+    <tr>
+        <td><strong>children()</strong></td>
+        <td><strong>parent()</strong></td>
+        <td><strong>parents()</strong></td>
+        <td><strong>not()</strong></td>
+        <td><strong>each()</strong></td>
+        <td><strong>contents()</strong></td>
+    </tr>
+</table>
+</pre>
+                    Both approaches can be combined:
+<pre>
+<table width="90%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><strong>$('body').find('a').not('.me');</strong></td>
+    </tr>
+</table>
+</pre>
                 </div>
                 <div class="footer">
                     avi.madbhave@gmail.com
@@ -219,24 +239,23 @@
             <div class="content">
                 Simple animations with jQuery can be achieved with show() and hide().
                 You can create any combination of animations with animate(), eg. a slide with a fade:
-                <pre>
-                    $(document).ready(function(){
-                        $("a").toggle(function(){
-                            $(".stuff").hide('slow');
-                        },function(){
-                            $(".stuff").show('fast');
-                        });
-                    });
-                </pre>
-                <pre>
-                    $(document).ready(function(){
-                    $("a").toggle(function(){
-                        $(".stuff").animate({ height: 'hide', opacity: 'hide' }, 'slow');
-                    },
-                    function(){
-                        $(".stuff").animate({ height: 'show', opacity: 'show' }, 'slow'); });
-                    });
-                </pre>
+<pre>
+$(document).ready(function(){
+    $("a").toggle(function(){
+        $(".stuff").hide('slow');
+    },function(){
+        $(".stuff").show('fast');
+    });
+});
+
+$(document).ready(function(){
+    $("a").toggle(function(){
+        $(".stuff").animate({ height: 'hide', opacity: 'hide' }, 'slow');
+    }, function(){
+        $(".stuff").animate({ height: 'show', opacity: 'show' }, 'slow');
+    });
+});
+</pre>
             </div>
             <div class="footer">
                 avi.madbhave@gmail.com
@@ -247,29 +266,28 @@
                 <span>Rate me</span>
             </div>
             <div class="content">
-                In this part we write a small Ajax application, that allows the user to rate something,
-                ￼
-                <pre>
-                    $(document).ready(function() {
-                        //generate markup
-                        $("#rating").append("Please rate: ");
-
-                        for ( var i = 1; i <= 5; i++ ) {￼
-                            $("#rating").append("&lt;a href='#'&gt;" + i + "&lt;/a&gt;");
-                        }
-
-                        // add markup to container and apply click handlers to anchors
-                        $("#rating a").click(function(e) {
-                            // stop normal link click
-                            e.preventDefault();
-                            // send request
-                            $.post("rate.php", {rating: $(this).html()}, function(xml) {
-                                // format and output result
-                                $("#rating").html("Thanks for rating, current average: " + $("average", xml).text() + ", number of votes: " + $("count", xml).text());
-                            });
-                        });
-                    });
-                </pre>
+                A small Ajax application, that allows the user to rate something,
+<pre>
+$(document).ready(function() {
+    //generate markup
+    $("#rating").append("Please rate: ");
+    for ( var i = 1; i <= 5; i++ ) {￼
+        $("#rating").append("&lt;a href='#'&gt;" + i + "&lt;/a&gt;");
+    }
+    // add markup to container and apply click handlers to anchors
+    $("#rating a").click(function(e) {
+        // stop normal link click
+        e.preventDefault();
+        // send request
+        $.post("rate.php", {rating: $(this).html()}, function(xml) {
+            // format and output result
+            $("#rating").html("Thanks for rating, current average: "
+                + $("average", xml).text() + ", number of votes: "
+                + $("count", xml).text());
+        });
+    });
+});
+</pre>
             </div>
             <div class="footer">
                 avi.madbhave@gmail.com
@@ -279,22 +297,28 @@
             <div class="title">
                 <span>Plug me</span>
             </div>
-            <div class="content">
+            <div class="content" style="font-size: 30px !important;">
                 Writing your own plugins for jQuery is quite easy. If you stick to the following rules,
-                <b>Plugin Naming</b>
-                Find a name for your plugin, lets call our example "foobar". Create a file named jquery.
-                [yourpluginname].js, eg. jquery.foobar.js
-                <b>Adding a Custom Method</b>
-                Create one or more plugin methods by extending the jQuery object, eg.:
-                <pre>
-                    jQuery.fn.foobar = function() { // do something
-                    };
-                </pre>
+
+                <p>
+                    <span class="orange-text">Plugin Naming</span><br/>
+                    Find a name for your plugin, lets call our example "foobar". Create a file named
+                    jquery.[yourpluginname].js, eg. jquery.foobar.js
+                </p>
+                <p>
+                    <span class="orange-text">Adding a Custom Method</span><br/>
+                    Create one or more plugin methods by extending the jQuery object, eg.:
+                </p>
+<pre>
+    jQuery.fn.foobar = function() {
+        // do something
+    };
+</pre>
 
                 Which will then be accessible by performing:
-                <pre>
-                    $(...).foobar();
-                </pre>
+<pre>
+    $(selector).foobar();
+</pre>
             </div>
             <div class="footer">
                 avi.madbhave@gmail.com
@@ -305,10 +329,10 @@
                     <span>Handle me</span>
                 </div>
                 <div class="content">
-                    <p class="fragment" data-fragment-index="0"><span class="orange-text">Bind:-</span> attach the event handler to all of the elements that are matched! That is not good.</p>
-                    <p class="fragment" data-fragment-index="1"><span class="orange-text">Live:-</span> attaches the event handler to the root level document along with the associated selector and event information.</p>
-                    <p class="fragment" data-fragment-index="2"><span class="orange-text">Delegate:-</span> behaves in a similar fashion to the .live() method, but instead of attaching the selector/event information to the document, you can choose where it is anchored.</p>
-                    <p class="fragment" data-fragment-index="3"><span class="orange-text">On:-</span> <a href="https://github.com/jquery/jquery/blob/633ca9c1610c49dbb780e565f4f1202e1fe20fae/src/event.js#L956" target="_blank">Lets check what is this</a></p>
+                    <p><span class="orange-text">Bind:-</span> attach the event handler to all of the elements that are matched! That is not good.</p>
+                    <p class="fragment" data-fragment-index="0"><span class="orange-text">Live:-</span> attaches the event handler to the root level document along with the associated selector and event information.</p>
+                    <p class="fragment" data-fragment-index="1"><span class="orange-text">Delegate:-</span> behaves in a similar fashion to the .live() method, but instead of attaching the selector/event information to the document, you can choose where it is anchored.</p>
+                    <p class="fragment" data-fragment-index="2"><span class="orange-text">On:-</span> <a href="https://github.com/jquery/jquery/blob/633ca9c1610c49dbb780e565f4f1202e1fe20fae/src/event.js#L956" target="_blank">Lets check what is this</a></p>
                 </div>
                 <div class="footer">
                     avi.madbhave@gmail.com
