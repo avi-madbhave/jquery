@@ -2,9 +2,370 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>jQuery Tutorial</title>
+    <link rel="stylesheet" href="./css/reveal.css"/>
+    <link rel="stylesheet" href="./css/theme/solarized.css" id="theme">
 </head>
 <body>
-<h1>jQuery Tutorial</h1>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <div class="intro">jQuery</div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+            	<span>Agenda</span>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>Understand me ( DOM )</li>
+                    <li>Setup me</li>
+                    <li>Use me</li>
+                    <li>Find me</li>
+                    <li>Animate me </li>
+                    <li>Rate me</li>
+                    <li>Plug me</li>
+                    <li>Handle me</li>
+                </ul>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <section>
+                <div class="title">
+                    <span>Understand me <br/> ( DOM )</span>
+                </div>
+                <div class="content">
+                    <span class="orange-text">D is for document :-</span>
+                    The DOM can’t work without a document. When we create a web page and load it in a web browser, the DOM stirs into life.
+                    It takes the document that we have written and turns into an object.
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+            </section>
+            <section>
+                <div class="title">
+                    <span>Understand me <br/> ( DOM )</span>
+                </div>
+                <div class="content">
+                    <span class="orange-text">O is for object :-</span>
+                    Simply objects are self-contained bundles of data.
+                    <p>Variables associated with an object are called <b class="selected-color">properties</b> of the object.</p>
+                    <p>Function that can be executed by an object are called <b class="selected-color">methods</b> of the object.</p>
+                    <p>There are three kinds of objects in jQuery/javascript</p>
+                    <ul>
+                    <li>User-defined</li>
+                    <li>Native objects like Array, Math, and Date</li>
+                    <li>Host objects</li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+            </section>
+            <section>
+                <div class="title">
+                    <span>Understand me <br/> ( DOM )</span>
+                </div>
+                <div class="content">
+                    <span class="orange-text">M is for Model :-</span>
+                    The M in DOM stands for Model, but it could just as easily stand for Map.
+                    A model, like a map, is representation of something.
+                    The DOM represents the web page that’s currently loaded in the browser window.
+                    The browser provides a map (or model) of the page. We can use jQuery to read this map.
+                    <p>
+                        Maps make use of conventions like direction, nodes, and scale.
+                        In order to read a map, we need to understand these conventions and it’s the same with the DOM.
+                    </p>
+                    <p>
+                        The most important convention used by the DOM is the representation of a document as a tree.
+                    </p>
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+            </section>
+        </section>
+        <section>
+            <div class="title">
+                <span>DOM Structure</span>
+            </div>
+            <div class="content">
+                <img src="./images/html-tree.png">
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                <span>Setup me</span>
+            </div>
+            <div class="content">
+                To start jQuery, we need a copy of the jQuery library which we get from the main download page.
+                url : <a href="http://jquery.com/download/">Downloading jQuery</a>
+                <p>To add jQuery into our web page, we need to used &lt;script&gt; tag</p>
+<pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+            // we will add our javascript code here
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- we will add our HTML content here --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                <span>Use me</span>
+            </div>
+            <div class="content">
+                A small Hello jQuery! application.
+<pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Hello jQuery&lt;/title&gt;
+        &lt;script type=“text/javascript” scr=“jquery.js”&gt;&lt;/script&gt;
+        &lt;script type=“text/javascript”&gt;
+            $(document).ready(function() {
+                $("a").click(function() {
+                    alert("Hello jQuery!");
+                });
+            });
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href=“#”&gt;Click me&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <section>
+                <div class="title">
+                    <span>Find me</span>
+                </div>
+                <div class="content">
+                    jQuery provides two approaches to select elements.
+                    <p>The first uses a combination of <a href="https://api.jquery.com/category/selectors/" target="_blank">CSS and XPath selectors</a> passed as a string to the jQuery constructor (eg. $("div > ul a")):</p>
+<pre>
+<table width="90%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><strong>$(‘.class’)</strong></td>
+        <td><strong>$(‘#id’)</strong></td>
+        <td><strong>$('tag')</strong></td>
+    </tr>
+    <tr>
+        <td colspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+        <td><strong>$(‘E[@attr]’)</strong></td>
+        <td><strong>$(‘E[@attr=val]’)</strong></td>
+        <td><strong>$(‘E[@attr*=val]’)</strong></td>
+    </tr>
+</table>
+</pre>
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+            </section>
+            <section>
+                <div class="title">
+                    <span>Find me</span>
+                </div>
+                <div class="content">
+                    The second uses several methods of the jQuery object:
+<pre>
+<table width="90%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><strong>find()</strong></td>
+        <td><strong>next()</strong></td>
+        <td><strong>nextAll()</strong></td>
+        <td><strong>prev()</strong></td>
+        <td><strong>prevAll()</strong></td>
+        <td><strong>siblings()</strong></td>
+    </tr>
+    <tr>
+        <td colspan="6">&nbsp;</td>
+    </tr>
+    <tr>
+        <td><strong>children()</strong></td>
+        <td><strong>parent()</strong></td>
+        <td><strong>parents()</strong></td>
+        <td><strong>not()</strong></td>
+        <td><strong>each()</strong></td>
+        <td><strong>contents()</strong></td>
+    </tr>
+</table>
+</pre>
+                    Both approaches can be combined:
+<pre>
+<table width="90%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><strong>$('body').find('a').not('.me');</strong></td>
+    </tr>
+</table>
+</pre>
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+            </section>
+
+        </section>
+        <section>
+            <div class="title">
+                <span>Animate me</span>
+            </div>
+            <div class="content">
+                Simple animations with jQuery can be achieved with show() and hide().
+                You can create any combination of animations with animate(), eg. a slide with a fade:
+<pre>
+$(document).ready(function(){
+    $("a").toggle(function(){
+        $(".stuff").hide('slow');
+    },function(){
+        $(".stuff").show('fast');
+    });
+});
+
+$(document).ready(function(){
+    $("a").toggle(function(){
+        $(".stuff").animate({ height: 'hide', opacity: 'hide' }, 'slow');
+    }, function(){
+        $(".stuff").animate({ height: 'show', opacity: 'show' }, 'slow');
+    });
+});
+</pre>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                <span>Rate me</span>
+            </div>
+            <div class="content">
+                A small Ajax application, that allows the user to rate something,
+<pre>
+$(document).ready(function() {
+    //generate markup
+    $("#rating").append("Please rate: ");
+    for ( var i = 1; i <= 5; i++ ) {￼
+        $("#rating").append("&lt;a href='#'&gt;" + i + "&lt;/a&gt;");
+    }
+    // add markup to container and apply click handlers to anchors
+    $("#rating a").click(function(e) {
+        // stop normal link click
+        e.preventDefault();
+        // send request
+        $.post("rate.php", {rating: $(this).html()}, function(xml) {
+            // format and output result
+            $("#rating").html("Thanks for rating, current average: "
+                + $("average", xml).text() + ", number of votes: "
+                + $("count", xml).text());
+        });
+    });
+});
+</pre>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                <span>Plug me</span>
+            </div>
+            <div class="content" style="font-size: 30px !important;">
+                Writing your own plugins for jQuery is quite easy. If you stick to the following rules,
+
+                <p>
+                    <span class="orange-text">Plugin Naming</span><br/>
+                    Find a name for your plugin, lets call our example "foobar". Create a file named
+                    jquery.[yourpluginname].js, eg. jquery.foobar.js
+                </p>
+                <p>
+                    <span class="orange-text">Adding a Custom Method</span><br/>
+                    Create one or more plugin methods by extending the jQuery object, eg.:
+                </p>
+<pre>
+    jQuery.fn.foobar = function() {
+        // do something
+    };
+</pre>
+
+                Which will then be accessible by performing:
+<pre>
+    $(selector).foobar();
+</pre>
+            </div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+        <section>
+                <div class="title">
+                    <span>Handle me</span>
+                </div>
+                <div class="content">
+                    <p><span class="orange-text">Bind:-</span> attach the event handler to all of the elements that are matched! That is not good.</p>
+                    <p class="fragment" data-fragment-index="0"><span class="orange-text">Live:-</span> attaches the event handler to the root level document along with the associated selector and event information.</p>
+                    <p class="fragment" data-fragment-index="1"><span class="orange-text">Delegate:-</span> behaves in a similar fashion to the .live() method, but instead of attaching the selector/event information to the document, you can choose where it is anchored.</p>
+                    <p class="fragment" data-fragment-index="2"><span class="orange-text">On:-</span> <a href="https://github.com/jquery/jquery/blob/633ca9c1610c49dbb780e565f4f1202e1fe20fae/src/event.js#L956" target="_blank">Lets check what is this</a></p>
+                </div>
+                <div class="footer">
+                    avi.madbhave@gmail.com
+                </div>
+        </section>
+        <section>
+            <div class="end">Thank you</div>
+            <div class="footer">
+                avi.madbhave@gmail.com
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript" src="./javascript/head.min.js"></script>
+<script type="text/javascript" src="./javascript/reveal.js"></script>
+<script type="text/javascript">
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        // rtl: true,
+
+//        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default' // default/cube/page/concave/zoom/linear/none
+
+        // transitionSpeed: 'slow',
+        // backgroundTransition: 'slide'
+    });
+
+</script>
 </body>
 </html>
