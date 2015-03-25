@@ -35,8 +35,8 @@
 
 			// The "normal" size of the presentation, aspect ratio will be preserved
 			// when the presentation is scaled to fit different resolutions
-			width: 960,
-			height: 700,
+			//width: 960,
+			//height: 700,
 
 			// Factor of the display size that should remain empty around the content
 			margin: 0.1,
@@ -1474,8 +1474,8 @@
 				}
 				// Apply scale transform as a fallback
 				else {
-					dom.slides.style.left = '50%';
-					dom.slides.style.top = '50%';
+					//dom.slides.style.left = '50%';
+					//dom.slides.style.top = '50%';
 					dom.slides.style.bottom = 'auto';
 					dom.slides.style.right = 'auto';
 					transformElement( dom.slides, 'translate(-50%, -50%) scale('+ scale +')' );
