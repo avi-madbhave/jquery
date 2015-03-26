@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animate me</title>
+    <script type="text/javascript" src="../javascript/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../javascript/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("a.first").click(function(){
+                $("div.stuff").toggle();
+            });
+
+            $("a.second").click(function() {
+                if($('div.stuff:visible').length){
+                    $('.stuff').hide(1000,"easeInOutExpo");
+                } else {
+                    $('.stuff').show(1000,"easeInOutExpo");
+                }
+            });
+
+            $("a.third").click(function(){
+                $(".stuff").animate({ height: '25px', opacity: '1' }, 'slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <a href="#" class="first">First Animation</a>
+    <br/>
+    <a href="#" class="second">Second Animation</a>
+    <br/>
+    <a href="#" class="third">Third Animation</a>
+    <div class="stuff" style="border: red 1px solid; background-color:red;height: 50px; width: 50px;"></div>
+</body>
+</html>

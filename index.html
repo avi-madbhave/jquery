@@ -241,18 +241,18 @@
                 You can create any combination of animations with animate(), eg. a slide with a fade:
 <pre>
 $(document).ready(function(){
-    $("a").toggle(function(){
-        $(".stuff").hide('slow');
-    },function(){
-        $(".stuff").show('fast');
+    $("a.first").click(function(){
+        $("div.stuff").toggle();
     });
-});
-
-$(document).ready(function(){
-    $("a").toggle(function(){
-        $(".stuff").animate({ height: 'hide', opacity: 'hide' }, 'slow');
-    }, function(){
-        $(".stuff").animate({ height: 'show', opacity: 'show' }, 'slow');
+    $("a.second").click(function() {
+        if($('div.stuff:visible').length){
+            $('.stuff').hide(1000,"easeInOutExpo");
+        } else {
+            $('.stuff').show(1000,"easeInOutExpo");
+        }
+    });
+    $("a.third").click(function(){
+        $(".stuff").animate({ height: '25px', opacity: '1' }, 'slow');
     });
 });
 </pre>
