@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Plug me</title>
+    <script type="text/javascript" src="../../javascript/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="./jquery.imageborder.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('img').imageborder();
+            $('img:even').imageborder({
+                border: "#556b2f 2px solid",
+                height: "50px",
+                width: "50px"
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="../../images/img_entry_002.jpg">
+    <img src="../../images/img_entry_003.jpg">
+    <img src="../../images/img_entry_004.jpg">
+</body>
+</html>
